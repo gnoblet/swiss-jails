@@ -2,14 +2,14 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import { siteContent } from '$lib/data/content';
+	import { introContent } from '$lib/data/content_intro';
 </script>
 
 <Header />
 
 <div id="content" class="py-16 px-4">
 	<div class="prose mx-auto">
-		{#each siteContent.sections as section}
+		{#each introContent.sections as section}
 			<Section {section} />
 		{/each}
 	</div>

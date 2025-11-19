@@ -1,6 +1,6 @@
 import type { SiteContent } from '$lib/types/content';
 
-export const siteContent: SiteContent = {
+export const introContent: SiteContent = {
 	sections: [
 		{
 			id: 'introduction',
