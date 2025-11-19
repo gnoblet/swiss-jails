@@ -18,7 +18,7 @@
 {#if section.layout === 'card'}
 	<!-- Card layout: use daisyUI card component -->
 	<div
-		class="card {borderClass} border-error {section.cardSize || ''} bg-primary shadow-xl mb-12"
+		class="card {borderClass} {section.cardSize || ''} bg-primary shadow-xl mb-12"
 		id={section.id}
 	>
 		<div class="card-body">
