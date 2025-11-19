@@ -11,7 +11,7 @@ export const introContent: SiteContent = {
         {
 			id: 'introduction-2',
 			layout: 'card',
-            title: "truc",
+            title: "Un titre",
 			cardStyle: 'card-border',
 			cardSize: 'card-sm',
             content: [
@@ -21,7 +21,7 @@ export const introContent: SiteContent = {
         {
 			id: 'introduction-2',
 			layout: 'card',
-            title: "truc",
+            title: "Un autre titre",
 			cardStyle: 'card-dash',
 			cardSize: 'card-sm',
             borderSize: 8,
