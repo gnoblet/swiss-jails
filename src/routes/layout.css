@@ -1,3 +1,60 @@
+/* Fonts import */
+@import url("https://fonts.bunny.net/css?family=oswald:300|roboto-condensed:700");
+/* Tailwind CSS imports and plugins */
 @import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+/* @plugin '@tailwindcss/forms'; */
+/* @plugin '@tailwindcss/typography'; */
+@plugin "daisyui" {
+  themes: jailhouse --default;
+}
+@plugin "daisyui/theme" {
+  name: "jailhouse";
+  color-scheme: light;
+
+  --color-base-100: oklch(94% 0.003 240);
+  --color-base-200: oklch(88% 0.005 240);
+  --color-base-300: oklch(82% 0.007 240);
+  --color-base-content: oklch(25% 0.01 240);
+  --color-primary: oklch(50% 0.02 240);
+  --color-primary-content: oklch(95% 0.003 240);
+  --color-secondary: oklch(60% 0.015 220);
+  --color-secondary-content: oklch(95% 0.003 220);
+  --color-accent: oklch(55% 0.025 200);
+  --color-accent-content: oklch(95% 0.003 200);
+  --color-neutral: oklch(45% 0.01 240);
+  --color-neutral-content: oklch(95% 0.003 240);
+  --color-info: oklch(65% 0.05 220);
+  --color-info-content: oklch(95% 0.003 220);
+  --color-success: oklch(60% 0.08 140);
+  --color-success-content: oklch(95% 0.003 140);
+  --color-warning: oklch(75% 0.12 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(55% 0.2 25);
+  --color-error-content: oklch(98% 0.003 25);
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 2px;
+
+  --depth: 0;
+  --noise: 1;
+}
+
+@theme {
+  --font-sans: "Oswald", "sans-serif";
+  --font-heading: "Roboto Condensed", "sans-serif";
+}
+
+@layer base {
+  heading{
+    font-family: var(--font-heading);
+  }
+  h1 {
+    font-size: var(--text-2xl);
+  }
+}
