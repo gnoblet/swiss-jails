@@ -1,17 +1,17 @@
 <footer class="footer footer-center bg-base-200 text-base-content p-10">
 	<aside>
-		<p class="font-bold">
+		<p class="font-bold text-xl">
 			Swiss Jails
 		</p>
-		<p>Licensed under GPL-3.0 © {new Date().getFullYear()} - Free to use with citation</p>
+		<p class="text-lg">Licensed under GPL-3.0 © {new Date().getFullYear()} - Free to use with citation</p>
 	</aside>
 	<nav>
 		<div class="grid grid-flow-col gap-4">
-			<a href="https://github.com/gnoblet" class="btn btn-ghost btn-square" aria-label="GitHub">
+			<a href="https://github.com/gnoblet" class="btn btn-ghost btn-square btn-lg" aria-label="GitHub">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					viewBox="0 0 24 24"
 					class="fill-current"
 				>
@@ -20,11 +20,11 @@
 					></path>
 				</svg>
 			</a>
-			<a href="https://codeberg.org/gnoblet" class="btn btn-ghost btn-square" aria-label="Codeberg">
+			<a href="https://codeberg.org/gnoblet" class="btn btn-ghost btn-square btn-lg" aria-label="Codeberg">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					viewBox="0 0 24 24"
 					class="fill-current"
 				>
@@ -33,11 +33,11 @@
 					></path>
 				</svg>
 			</a>
-			<a href="https://bsky.app/profile/gnoblet.bsky.social" class="btn btn-ghost btn-square" aria-label="Bluesky">
+			<a href="https://bsky.app/profile/gnoblet.bsky.social" class="btn btn-ghost btn-square btn-lg" aria-label="Bluesky">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					viewBox="0 0 24 24"
 					class="fill-current"
 				>
@@ -46,11 +46,11 @@
 					></path>
 				</svg>
 			</a>
-			<a href="https://guillaume-noblet.com" class="btn btn-ghost btn-square" aria-label="Personal Website">
+			<a href="https://guillaume-noblet.com" class="btn btn-ghost btn-square btn-lg" aria-label="Personal Website">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					viewBox="0 0 24 24"
 					class="fill-current"
 				>
