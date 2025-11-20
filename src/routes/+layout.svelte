@@ -29,7 +29,7 @@
 </svelte:head>
 
 <div class="flex justify-center min-h-screen">
-	<div class="w-full max-w-3xl px-4">
+	<div class="w-full max-w-4xl px-4 lg:px-8">
 		{@render children()}
 	</div>
 </div>
