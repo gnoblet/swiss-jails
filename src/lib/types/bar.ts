@@ -1,0 +1,36 @@
+export type BarDatum = {
+	/**
+	 * Required value for the bar height/length.
+	 */
+	value: number;
+
+	/**
+	 * Optional short label to display on the axis or tooltip.
+	 * If omitted, `var_label` will be used instead.
+	 */
+	label?: string;
+
+	/**
+	 * Required, stable identifier / variable name (e.g. for i18n keys).
+	 * Also used as a fallback axis label when `label` is not provided.
+	 */
+	var: string;
+
+	/**
+	 * Optional grouping key for grouped / stacked charts.
+	 * All bars with the same `group` belong to the same series.
+	 */
+	group?: string;
+
+	/**
+	 * Optional human‑readable label for the group/series.
+	 */
+	group_label?: string;
+};
+
+export type BarSeries = BarDatum[];
+
+export type BarOrientation = 'vertical' | 'horizontal';
+
+// "stacked" puts series on top of each other; "grouped" dodges them side by side.
+export type BarLayout = 'stacked' | 'grouped';
