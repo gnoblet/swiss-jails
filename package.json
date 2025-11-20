@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.554.0",
+		"@sveltejs/adapter-static": "^3.0.10",
 		"d3": "^7.9.0",
 		"svelte-i18n": "^4.0.1"
 	}
