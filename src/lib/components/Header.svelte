@@ -40,18 +40,12 @@
 <div class="hero min-h-screen">
 	<div class="hero-content text-center">
 		<div class="max-w-md">
-			<h1 class="text-7xl font-bold">Swiss Jails Are Jails As Others</h1>
+			<h1 class="text-7xl font-bold">Les prisons suisses sont des prisons comme les autres</h1>
 			<p class="py-6 text-3xl">
-				Visit <a href="https://parlonsprisons.noblogs.org/" class="link link-primary"
-					>Parlons Prisons</a
-				>
-				to read their manifest
+				Visitez <a href="https://parlonsprisons.noblogs.org/" class="link link-primary">Parlons Prisons</a> pour lire leur manifeste
 			</p>
-			<button 
-				class="btn btn-outline btn-lg" 
-				onclick={scrollToContent}
-			>
-				Explore Swiss Jails
+			<button class="btn btn-outline btn-lg" onclick={scrollToContent}>
+				Explorer les prisons suisses
 			</button>
 		</div>
 	</div>
