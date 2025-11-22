@@ -16,7 +16,7 @@
 			Nombre de personnes détenues par type de détention (données fournies).
 		</p>
 		<div class="my-8 bg-base-200 p-6">
-			<BarChart data={detentionBarData} orientation="horizontal" />
+			<BarChart data={detentionBarData} />
 		</div>
 
 		{#each content.sections as section}

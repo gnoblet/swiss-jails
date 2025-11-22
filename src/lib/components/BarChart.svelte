@@ -10,23 +10,32 @@
 <script lang="ts">
 	import * as d3 from 'd3';
 	import { onMount } from 'svelte';
-	import type { BarDatum, BarLayout, BarOrientation, BarSeries } from '$lib/types/bar';
+
+	import type { BarDatum, BarLayout, BarOrientation, BarSeries, BarSort } from '$lib/types/bar';
 
 	export let data: BarSeries = [];
 
 	// 'vertical' uses value as bar height; 'horizontal' uses value as bar width.
-	export let orientation: BarOrientation = 'vertical';
+	export let orientation: BarOrientation = 'horizontal';
 
 	// 'grouped' draws bars side by side per x value; 'stacked' stacks by group.
 	// Currently reserved for future grouped/stacked logic.
 	export const defaultLayout: BarLayout = 'grouped';
+
+	// sort order for bars
+	export let sort: BarSort = 'desc';
 
 	let container: HTMLDivElement;
 
 	onMount(() => {
 		if (!container) return;
 
-		const margin = { top: 20, right: 20, bottom: 80, left: 60 };
+		const baseMargin = { top: 20, right: 20, bottom: 40, left: 80 };
+		const wrap_width = 120;
+		const margin =
+		orientation === 'horizontal'
+			? { ...baseMargin, left: wrap_width + 20 } // enough for ~120px wrapped text
+			: baseMargin;
 		const width = 800 - margin.left - margin.right;
 		const height = 400 - margin.top - margin.bottom;
 
@@ -43,7 +52,23 @@
 
 
 		// Bars
-		const xKey = (d: BarDatum) => d.label ?? d.var;
+
+		// Sort data if needed
+		if (sort === 'asc') {
+			data.sort((a, b) => a.value - b.value);
+		} else if (sort === 'desc') {
+			data.sort((a, b) => b.value - a.value);
+		}
+
+
+		// Use var_short_label > var_label > var for axis labels
+		const xKey = (d: BarDatum) => d.var_short_label ?? d.var_label ?? d.var;
+
+		// Color scale: one color per group
+		const groupIds = Array.from(new Set(data.map((d: BarDatum) => d.group ?? d.var)));
+		const color = d3.scaleOrdinal<string, string>()
+			.domain(groupIds)
+			.range(d3.schemeCategory10);
 
 		// Bars (currently single‑series, non‑stacked; uses orientation)
 		if (orientation === 'vertical') {
@@ -83,7 +108,7 @@
 				.attr('y', (d: BarDatum) => y(d.value))
 				.attr('width', x.bandwidth())
 				.attr('height', (d: BarDatum) => height - y(d.value))
-				.attr('class', 'fill-primary');
+				.attr('fill', (d: BarDatum) => color(d.group ?? d.var));
 
 			// Value labels
 			svg
@@ -103,6 +128,11 @@
 				.domain(data.map((d: BarDatum) => xKey(d)))
 				.range([0, height])
 				.padding(0.2);
+
+			const yAxis = d3.axisLeft(y);
+			const yAxisG = svg.append('g').call(yAxis);
+
+			// No label wrapping; use default axis labels
 
 			const x = d3
 				.scaleLinear()
@@ -126,7 +156,7 @@
 				.attr('x', 0)
 				.attr('height', y.bandwidth())
 				.attr('width', (d: BarDatum) => x(d.value))
-				.attr('class', 'fill-primary');
+				.attr('fill', (d: BarDatum) => color(d.group ?? d.var));
 
 			// Value labels
 			svg
