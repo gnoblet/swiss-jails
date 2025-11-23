@@ -32,26 +32,7 @@
 <Header />
 
 
-<style>
-.scroller-foreground-step {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100vw;
-}
-.scroller-card {
-	background: #fff;
-	color: #222;
-	box-shadow: 0 2px 16px 0 #0002;
-	border-radius: 1rem;
-	padding: 2rem 1.5rem;
-	max-width: 500px;
-	width: 90vw;
-	font-size: 1.2rem;
-	font-family: inherit;
-}
-</style>
+<!-- styles for scroller steps moved to `ScrollyStep.svelte` -->
 
 <div class="w-full">
 	<!-- Use the ScrollyRoll / ScrollyStep components -->
