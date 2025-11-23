@@ -1,6 +1,4 @@
 <script lang="ts">
-	export const prerender = true;
-
 	import './layout.css';
 	import { base } from '$app/paths';
 

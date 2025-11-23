@@ -1,0 +1,18 @@
+<script lang="ts">
+// Minimal placeholder LoremIpsum content for scroller demo
+</script>
+
+<div class="prose max-w-none p-8">
+  <h2>Lorem ipsum</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse
+    lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras
+    elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod
+    non, mi.
+  </p>
+  <p>
+    Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum
+    diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae,
+    consequat in, pretium a, enim. Pellentesque congue.
+  </p>
+</div>
