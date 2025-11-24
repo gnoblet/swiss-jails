@@ -2,25 +2,25 @@
     import { Scroller } from '@reuters-graphics/graphics-components';
 
     // Background
-    import Intro_BarChartDentention from '$lib/components/Intro_BarChartDentention.svelte';
+    import ScrollyVisualSingle from '$lib/components/scroll/ScrollyVisualSingle.svelte';
     
     // Array of step objects that define the steps in your scroller.
     const steps = [
         {
-            background: Intro_BarChartDentention,
-            backgroundProps: { chart: 'bar' },
+            background: ScrollyVisualSingle,
+            backgroundProps: { chart: 'bar', pointerEvents: false },
             foreground: '#### Step 1\n\nLorem dddipsum red',
             altText: 'Red background',
         },
         {
-            background: Intro_BarChartDentention,
-            backgroundProps: { chart: 'bar' },
+            background: ScrollyVisualSingle,
+            backgroundProps: { chart: 'bar', pointerEvents: false },
             foreground: '#### Step 2\n\nLorem ipsum blue',
             altText: 'Blue background',
         },
         {
-            background: Intro_BarChartDentention,
-            backgroundProps: { chart: 'waffle' },
+            background: ScrollyVisualSingle,
+            backgroundProps: { chart: 'waffle', pointerEvents: false },
             foreground: '#### Step 3\n\nLorem ipsum green',
             altText: 'Green background',
         },
