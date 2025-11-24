@@ -7,37 +7,14 @@ import { detentionBarData } from '$lib/data/bar_detention';
 export let chart: 'bar' | 'waffle';
 </script>
 
-<div class="scroller-background-wrap">
+<div class="fixed inset-0 z-0 flex items-center justify-center bg-transparent">
   {#if chart === 'bar'}
-    <div class="scroller-background-content">
+    <div class="w-full h-screen flex items-center justify-center">
       <BarChart data={detentionBarData} />
     </div>
   {:else if chart === 'waffle'}
-    <div class="scroller-background-content">
+    <div class="w-full h-screen flex items-center justify-center">
       <WaffleVertical data={detentionBarData} />
     </div>
   {/if}
 </div>
-
-<style>
-  /* Full-viewport background wrapper so background charts fill the screen
-     and sit behind the foreground scroller content. */
-  .scroller-background-wrap {
-    position: fixed;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none; /* make background non-interactive */
-    background: transparent;
-  }
-
-  .scroller-background-content {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
